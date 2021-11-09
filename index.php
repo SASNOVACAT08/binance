@@ -2,7 +2,7 @@
 
 $ch = curl_init("https://api.binance.com/api/v3/ticker/price");
 $headers = array(
-   "Content-Type: application/json",
+   "Reponse-Type: application/json",
 );
 curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
 curl_exec($ch);
