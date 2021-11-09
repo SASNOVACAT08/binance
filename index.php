@@ -1,11 +1,14 @@
 <?php
+header('Content-Type: application/json; charset=utf-8');
 
-$url = "https://api.binance.com/api/v3/ticker/price";
+$base = "https://api3.binance.com";
+$endpoint = "/api/v3/ticker/price";
 
-$curl = curl_init($url);
+$request = curl_init($base . $endpoint);
 
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-$curl = curl_exec($curl);
-$curl_close($curl);
-   
-echo($curl);
+curl_setopt($request, CURLOPT_RETURNTRANSFER, true);
+
+$response = curl_exec($request);
+curl_close($request);
+
+echo $response;
